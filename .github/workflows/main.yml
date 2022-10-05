@@ -1,8 +1,8 @@
 name: CI
 
 on:
-  push:
-    branches: [ "main" ]
+  #push:
+    #branches: [ "main" ]
 
   workflow_dispatch:
 
@@ -38,7 +38,7 @@ jobs:
           
           git clone --quiet https://${{ github.token }}@github.com/${{ github.repository }} tmp
           cd tmp
-          #rm -rf *.txt
+          rm -rf *.txt
           DATE=`date +%Y%m%d%H%M`
           touch $DATE.txt
           git config user.name github-actions
